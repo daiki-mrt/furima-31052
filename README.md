@@ -29,7 +29,7 @@ has_many :orders
 | category_id      | integer    | null: false       | 
 | status_id        | integer    | null: false       | 
 | charge_type_id   | integer    | null: false       | 
-| ship_from_id     | integer    | null: false       | 
+| prefecture_id    | integer    | null: false       | 
 | ship_duration_id | integer    | null: false       | 
 | price            | integer    | null: false       | 
 | user             | references | foreign_key: true | 
@@ -59,11 +59,12 @@ has_one :address
 | Column         | Type       | Option            | 
 | -------------- | ---------- | ----------------- | 
 | postal_code    | string     | null: false       | 
-| prefecture     | integer    | null: false       | 
+| prefecture_id  | integer    | null: false       | 
 | city           | string     | null: false       | 
 | street_num     | string     | null: false       | 
 | building       | string     |                   | 
-| phone_num      | integer    | null: false       | 
+| phone_num      | string     | null: false       | 
+| order          | references | foreign_key: true | 
 
 ### Association
 
