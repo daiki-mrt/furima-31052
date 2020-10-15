@@ -13,7 +13,7 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :content
-    validates :cateory_id
+    validates :category_id
     validates :status_id
     validates :charge_type_id
     validates :prefecture_id
