@@ -7,4 +7,15 @@ class Item < ApplicationRecord
   belongs_to_active_hash :ship_duration
 
   has_one_attached :image
+
+  with_options presence: true do
+    validates :image
+    validates :name
+    validates :cateory_id
+    validates :status_id
+    validates :charge_type_id
+    validates :prefecture_id
+    validates :ship_duration_id
+    validates :price, format: { with: /[300-9999999]/, message: "must be between 300 ~ 9999999" }
+  end
 end
