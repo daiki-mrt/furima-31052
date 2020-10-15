@@ -10,14 +10,15 @@ class Item < ApplicationRecord
   belongs_to :user
 
   with_options presence: true do
-    validates :image
+    validates :image 
     validates :name
     validates :content
-    validates :category_id
-    validates :status_id
-    validates :charge_type_id
-    validates :prefecture_id
-    validates :ship_duration_id
-    validates :price, format: { with: /[300-9999999]/, message: "must be between 300 ~ 9999999" }
+    validates :category_id, numericality: { other_than: 0 }
+    validates :status_id, numericality: { other_than: 0 }
+    validates :charge_type_id, numericality: { other_than: 0 }
+    validates :prefecture_id, numericality: { other_than: 0 }
+    validates :ship_duration_id, numericality: { other_than: 0 }
+    validates :price, numericality: { greater_than_or_equal_to: 300 }
+    validates :price, numericality: { less_than_or_equal_to: 9999999 }
   end
 end
