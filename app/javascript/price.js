@@ -16,8 +16,3 @@ function price () {
   })
 }
 window.addEventListener("load", price)
-
-function hoge () {
-  console.log("hoge")
-}
-window.addEventListener("load", hoge)
