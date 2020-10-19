@@ -3,10 +3,10 @@ class OrderAddress
   attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :street_num, :building, :phone_num, :order_id
 
   with_options presence: true do
-    validates :user_id  
-    validates :order_id
-    validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ } #ハイフンが必要
-    validates :prefecture_id, numericality: { other_than: 0 }
+    validates :user_id
+    validates :item_id
+    validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'must include "-"' } #ハイフンが必要
+    validates :prefecture_id, numericality: { other_than: 0, message: "must be selected" }
     validates :city
     validates :street_num
     validates :phone_num, format: { with: /\A\d{10,11}\z/ } #ハイフン不要
