@@ -6,7 +6,7 @@ class OrderAddress
     validates :token
     validates :user_id
     validates :item_id
-    validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'must include "-"' } #ハイフンが必要
+    validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: "must be input correctly" } #ハイフンが必要
     validates :prefecture_id, numericality: { other_than: 0, message: "must be selected" }
     validates :city
     validates :street_num
