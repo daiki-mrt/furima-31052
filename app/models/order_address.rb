@@ -1,8 +1,9 @@
 class OrderAddress
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :street_num, :building, :phone_num, :order_id
+  attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :street_num, :building, :phone_num, :order_id, :token
 
   with_options presence: true do
+    validates :token
     validates :user_id
     validates :item_id
     validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'must include "-"' } #ハイフンが必要
