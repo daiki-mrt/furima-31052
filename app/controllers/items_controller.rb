@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if user_signed_in? && @item.user.id == current_user.id
+    if (user_signed_in? && @item.user.id == current_user.id) && @item.order.nil?
       @item.destroy
       redirect_to root_path
     else
@@ -53,7 +53,7 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    if @item.user.id != current_user.id
+    if (@item.user.id != current_user.id) || @item.order
       redirect_to root_path
     end
   end
