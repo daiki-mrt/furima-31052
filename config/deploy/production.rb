@@ -31,7 +31,6 @@
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-server '54.199.59.198', user: 'ec2-user', roles: %w{app db web}
 
 
 
@@ -62,3 +61,5 @@ server '54.199.59.198', user: 'ec2-user', roles: %w{app db web}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+server '54.199.59.198', user: 'ec2-user', roles: %w{app db web}
